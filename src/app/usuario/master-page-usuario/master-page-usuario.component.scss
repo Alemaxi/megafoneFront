@@ -1,0 +1,30 @@
+@import '../../shared/css/clicavel.scss';
+
+
+.toolbar{
+    background-color: rgb(69, 69, 70); 
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+}
+
+.space-between-items {
+    margin-right: 35px;
+    margin:none; 
+    padding: none;
+}
+
+.router-envelope {
+    position: relative;
+    width: 100%;
+    height: 85%;
+    overflow: auto;
+    overflow-x:hidden;
+}
+
+.rodape {
+    @extend .toolbar;
+
+    width: 100%;
+    height: 7%;
+}

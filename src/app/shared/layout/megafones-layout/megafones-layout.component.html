@@ -1,0 +1,11 @@
+<mat-toolbar class="toolbar-secundaria">
+    <div></div>
+    <input type="text" class="input-text" placeholder="Filtrar megafones">
+    <span style="font-size:30px;" class="material-symbols-outlined clicavel">refresh</span>
+</mat-toolbar>
+
+
+<div class="megafone-envelope" *ngFor="let number of itens" (click)="Abrir()">
+    <h1 class="megafone-titulo">Titulo do megafone {{number}}</h1>
+    <span class="mensagem-quantidade">9</span>
+</div>

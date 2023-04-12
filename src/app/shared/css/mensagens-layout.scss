@@ -1,0 +1,13 @@
+.mensagens-layout {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    width: 70%;
+    height: 100%;
+    background-color: aquamarine;
+    transition: ease-in-out .7s;
+}
+
+.mensagens-layout-fechado {
+    left: 30%;
+}

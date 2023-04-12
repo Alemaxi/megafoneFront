@@ -1,0 +1,34 @@
+@import '../../css/input-text.scss';
+@import '../../css/toolbar-secundaria.scss';
+@import '../../css/clicavel.scss';
+
+
+.megafone-envelope {
+    margin-bottom: 2.5px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding: 15px 10px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .megafone-titulo {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .mensagem-quantidade {
+        display: block;
+        padding: 5px 9px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+    }
+}
+
+.megafone-envelope:hover {
+    background-color: rgb(245, 243, 243);
+}
+
