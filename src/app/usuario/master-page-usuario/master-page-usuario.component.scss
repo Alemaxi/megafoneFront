@@ -1,9 +1,10 @@
 @import '../../shared/css/clicavel.scss';
+@import '../../shared/css/cores.scss';
 
 
 .toolbar{
-    background-color: rgb(69, 69, 70); 
-    color: whitesmoke;
+    background-color: $principal; 
+    color: $principalTexto;
     display: flex;
     align-items: center;
 }
