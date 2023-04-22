@@ -15,6 +15,11 @@ const routes: Route[] = [
       {
         path: 'mensageiro',
         loadChildren: () => import('./mensageiro/mensageiro.module').then(m => m.MensageiroModule)
+      },
+      {
+        path: '**',
+        redirectTo: 'receptor',
+        pathMatch: 'full'
       }
     ]
   }

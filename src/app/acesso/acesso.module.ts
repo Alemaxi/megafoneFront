@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { AcessoRoutingModule } from './acesso-routing.module';
@@ -11,7 +13,8 @@ import { AcessoRoutingModule } from './acesso-routing.module';
   ],
   imports: [
     CommonModule,
-    AcessoRoutingModule
+    AcessoRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AcessoModule { }

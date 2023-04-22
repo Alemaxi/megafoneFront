@@ -1,1 +1,21 @@
-<div class="mensagens-layout" [class.mensagens-layout-fechado]="aberto"></div>
+<div 
+    style="width: 100%; height: 100%; position: absolute; top:0; background-color: rgba(0, 0, 0,.3);" 
+    *ngIf="aberto"
+    (click)="Fechar()">
+</div>
+<div class="mensagens-layout" [class.mensagens-layout-fechado]="aberto">
+    <div class="mensagens-title">
+        <h2>Titulo do megafone</h2>
+        <div style="display: flex;">
+            <span 
+                class="material-symbols-outlined adicionar-mensagem-botao">
+                post_add
+            </span>
+            <span class="material-symbols-outlined mensagens-fechar" (click)="Fechar()">
+                close
+            </span>
+        </div>
+    </div>
+
+
+</div>

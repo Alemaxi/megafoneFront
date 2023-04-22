@@ -1,11 +1,24 @@
 <div class="background-cadastro">
-    <h1>MEGAFONE</h1>
+    <h1 style="margin-top: 150px;">MEGAFONE</h1>
+    
+    <form [formGroup]="cadastroGrupo" (ngSubmit)="Adicionar()">
+        
+        <label for="usuario">Usuario</label>
+        <input 
+        formControlName="usuario" 
+        id='usuario' type="text" 
+        class="input-text"
+        [class.input-text-invalid]="usuarioControl.invalid && usuarioControl.touched">
+    
+        <label for="">Email</label>
+        <input 
+        formControlName="email" 
+        id="email" usuario 
+        type="text" class="input-text"
+        [class.input-text-invalid]="emailControl.invalid && emailControl.touched">
 
-    <label for="">Usuario</label>
-    <input id usuario type="text" class="input-text">
-
-    <label for="">senha</label>
-    <input id usuario type="text" class="input-text">
+        <button type="submit" style="margin-top: 15px;"> cadastrar</button>
+    </form>
 
     <div></div>
 </div>

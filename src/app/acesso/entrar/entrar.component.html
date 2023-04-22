@@ -1,1 +1,17 @@
-<p>entrar works!</p>
+<div class="background">
+
+    <h1>MEGAFONE</h1>
+
+    <form class="formEntrar" [formGroup]="entrarGroup" (ngSubmit)="Entrar()">
+        
+        <label for="email" class="">Email</label>
+        <input 
+        formControlName="email"
+        id="email" 
+        type="text"
+        class="input-text"
+        [class.input-text-invalid]="emailControl.invalid && !emailControl.untouched">
+
+        <button class="" type="submit">Entrar</button>
+    </form>
+</div>

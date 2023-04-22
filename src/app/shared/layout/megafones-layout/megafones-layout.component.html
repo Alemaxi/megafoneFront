@@ -1,11 +1,31 @@
 <mat-toolbar class="toolbar-secundaria">
-    <div></div>
-    <input type="text" class="input-text" placeholder="Filtrar megafones">
-    <span style="font-size:30px;" class="material-symbols-outlined clicavel">refresh</span>
+    <div style="width: 15px;"></div>
+    <input type="text" class="input-text" placeholder="Filtrar megafones"
+    [formControl]="filterControl"
+    >
+
+    <div class="megafone-acoes-area">
+        
+        <span style="font-size:30px;" *ngIf="mostrarAtualizar"
+        (click)="AtualizarMegafones()"
+        class="material-symbols-outlined clicavel">
+            refresh
+        </span>
+        
+        <span *ngIf="mostrarAdd" 
+        style="margin-left: 15px;" class="material-symbols-outlined clicavel"
+        (click)="AbrirCriar()">
+            add
+        </span>
+    </div>
 </mat-toolbar>
 
 
-<div class="megafone-envelope" *ngFor="let number of itens" (click)="Abrir()">
-    <h1 class="megafone-titulo">Titulo do megafone {{number}}</h1>
-    <span class="mensagem-quantidade">9</span>
+<div class="megafone-envelope" *ngFor="let megafone of ObterMegafonesParaDisplay()" (click)="Abrir()">
+    <h1 class="megafone-titulo">{{megafone.nome}}</h1>
+    <div class="items-direita">
+        <span class="mensagem-quantidade" *ngIf="mostrarQuantidade">
+            {{megafone.quantidadeMensagens}}
+        </span>
+    </div>
 </div>

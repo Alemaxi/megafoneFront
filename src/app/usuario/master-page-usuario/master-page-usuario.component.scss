@@ -19,8 +19,8 @@
     position: relative;
     width: 100%;
     height: 85%;
-    overflow: auto;
-    overflow-x:hidden;
+    overflow-y:auto;
+    overflow-x: hidden;
 }
 
 .rodape {
@@ -28,4 +28,18 @@
 
     width: 100%;
     height: 7%;
+}
+
+.menu {
+    font-size: 30px; 
+    margin-right: 10px;
+}
+
+.menu:hover {
+    cursor: pointer;
+    color: $principalHover;
+}
+
+.sidenav {
+    padding-left: 25px;
 }

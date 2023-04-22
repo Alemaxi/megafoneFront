@@ -1,13 +1,21 @@
-<mat-toolbar class="toolbar">
-    <h1 class="space-between-items">Megafone</h1>
-    <h3 routerLink="receptor" class="space-between-items clicavel"> Receptor</h3>
-    <h3 routerLink="mensageiro" class="space-between-items clicavel"> Mensageiro</h3>
-</mat-toolbar>
+<mat-drawer-container style="width: 100%; height: 100%;">
+    <mat-drawer #drawer class="example-sidenav sidenav" mode="over">
+        <h2 routerLink="receptor" class="space-between-items clicavel"> Receptor</h2>
+        <h2 routerLink="mensageiro" class="space-between-items clicavel"> Mensageiro</h2>
+    </mat-drawer>
 
-<div class="router-envelope">
-    <router-outlet></router-outlet>
-</div>
+    <mat-toolbar class="toolbar">
+        <span class="material-symbols-outlined menu" (click)="drawer.toggle()">menu</span>
+        <h1 class="space-between-items">MEGAFONE</h1>
+    </mat-toolbar>
+    
+    <div class="router-envelope">
+        <router-outlet></router-outlet>
+    </div>
+    
+    <div class="rodape">
+    
+    </div>
+    
+</mat-drawer-container>
 
-<div class="rodape">
-
-</div>
