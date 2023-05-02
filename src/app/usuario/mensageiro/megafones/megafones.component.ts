@@ -12,6 +12,8 @@ export class MegafonesComponent implements OnInit {
 
   aberto: boolean = false;
   abertoCriar: boolean = false;
+  abertoEditar: boolean = false;
+  megafoneSelecionado: MegafoneDTO = new MegafoneDTO();
 
   megafones: MegafoneDTO[] = [];
 
@@ -24,7 +26,8 @@ export class MegafonesComponent implements OnInit {
     this.CarregarMegafones();
   }
 
-  Abrir() {
+  Abrir(megafone: MegafoneDTO) {
+    this.megafoneSelecionado = megafone;
     this.aberto = true;
   }
 
@@ -39,5 +42,22 @@ export class MegafonesComponent implements OnInit {
         this.megafones = x;
       }
     })
+  }
+
+  AbrirExcluir(){
+    if(!confirm("Tem certeza que deseja excluir?")){
+      return;
+    }
+
+    this.megafone.RemoverMegafone(Number(this.megafoneSelecionado.id))
+    .subscribe(x => {
+      this.CarregarMegafones();
+      this.aberto = false;
+    });
+  }
+
+  AbrirEditar() {
+    this.abertoEditar = true;
+    this.aberto = false;
   }
 }

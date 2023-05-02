@@ -4,13 +4,8 @@
 
 
 .megafone-envelope {
-    margin-bottom: 2.5px;
-    border-bottom: 1px solid rgb(211, 211, 211);
-    padding: 15px 10px;
-    padding-right: 15px;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
 
     .megafone-titulo {
         font-size: 17px;
@@ -28,7 +23,7 @@
     }
 }
 
-.megafone-envelope:hover {
+.list-item:hover {
     background-color: rgb(245, 243, 243);
 }
 
@@ -40,5 +35,14 @@
 .items-direita {
     display: flex;
     align-items: center;
+}
+
+.list-item {
+    cursor: pointer;
+    padding-right: 15px;
+    margin-bottom: 2.5px;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding-bottom: 10px;
 }
 

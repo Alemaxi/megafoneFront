@@ -7,8 +7,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class MensagensLayoutComponent implements OnInit {
 
+  @Input() mostrarExcluir: boolean = true;
+  @Input() mostrarEditar: boolean = true;
+  @Input() mostrarPostar: boolean = true;
+
   @Input() aberto: boolean = true;
   @Output() abertoChange = new EventEmitter<boolean>();
+
+  @Output() abrirEditar = new EventEmitter();
+  @Output() abrirExcluir = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -19,4 +26,11 @@ export class MensagensLayoutComponent implements OnInit {
     this.abertoChange.emit(this.aberto);
   }
 
+  AbrirEditarMegafone(){
+    this.abrirEditar.emit();
+  }
+
+  AbrirExcluirMegafone(){
+    this.abrirExcluir.emit();
+  }
 }

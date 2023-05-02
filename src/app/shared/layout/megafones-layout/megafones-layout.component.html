@@ -20,12 +20,17 @@
     </div>
 </mat-toolbar>
 
-
-<div class="megafone-envelope" *ngFor="let megafone of ObterMegafonesParaDisplay()" (click)="Abrir()">
-    <h1 class="megafone-titulo">{{megafone.nome}}</h1>
-    <div class="items-direita">
-        <span class="mensagem-quantidade" *ngIf="mostrarQuantidade">
-            {{megafone.quantidadeMensagens}}
-        </span>
+<div class="list-item" *ngFor="let megafone of ObterMegafonesParaDisplay()" (click)="Abrir(megafone)">
+    <div class="megafone-envelope" >
+        <h1 class="megafone-titulo">{{megafone.nome}}</h1>
+        <div class="items-direita">
+            <span class="mensagem-quantidade" *ngIf="mostrarQuantidade && megafone.quantidadeMensagens!=0">
+                {{ObterQuantidade(megafone)}}
+            </span>
+        </div>
     </div>
+
+    <span>
+        {{megafone.descricao}}
+    </span>
 </div>

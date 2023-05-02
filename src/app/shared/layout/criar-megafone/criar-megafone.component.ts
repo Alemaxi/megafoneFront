@@ -18,7 +18,7 @@ export class CriarMegafoneComponent implements OnInit {
 
   @Input() aberto: boolean = false;
   @Output() abertoChange = new EventEmitter<boolean>();
-  @Output() atualizarMicrofones = new EventEmitter();
+  @Output() atualizarMegafones = new EventEmitter();
 
   criarGroup = new FormGroup({
     nomeMegafone: new FormControl('',Validators.required),
@@ -54,7 +54,7 @@ export class CriarMegafoneComponent implements OnInit {
     
     this.megafone.CriarMegafone(megafone).subscribe({
       next: x => {
-        this.atualizarMicrofones.emit();
+        this.atualizarMegafones.emit();
       }
     });
   }

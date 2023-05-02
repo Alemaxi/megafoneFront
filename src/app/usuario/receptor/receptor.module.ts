@@ -9,6 +9,7 @@ import { MensagensLayoutModule } from '../../shared/layout/mensagens-layout/mens
 //angular material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { CadastrarEmMegafoneComponent } from 'src/app/shared/layout/cadastrar-em-megafone/cadastrar-em-megafone.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MegafonesLayoutModule,
     MatIconModule,
-    MensagensLayoutModule
+    MensagensLayoutModule,
+    CadastrarEmMegafoneComponent
   ]
 })
 export class ReceptorModule { }

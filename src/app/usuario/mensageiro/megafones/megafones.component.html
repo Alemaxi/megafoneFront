@@ -4,17 +4,27 @@
     [mostrarAtualizar]="false"
     (abrirCriar)="AbrirCriar()"
     (carregarMegafones)="CarregarMegafones()"
-    (abrir)="Abrir()" 
+    (abrir)="Abrir($event)" 
     [mostrarQuantidade]="false"
     [megafones]="megafones">
     </app-megafones-layout>
     
-    <app-mensagens-layout [(aberto)]="aberto"></app-mensagens-layout>
+    <app-mensagens-layout 
+    [(aberto)]="aberto"
+    (abrirExcluir)="AbrirExcluir()"
+    (abrirEditar)="AbrirEditar()">
+    </app-mensagens-layout>
 
     <app-criar-megafone 
     [(aberto)]="abertoCriar"
-    (atualizarMicrofones)="CarregarMegafones()">
-
+    (atualizarMegafones)="CarregarMegafones()">
     </app-criar-megafone>
+
+    <!--<app-editar-megafone
+    [megafoneSelecionado]="megafoneSelecionado"
+    (atualizarMegafones)="CarregarMegafones()"
+    [(aberto)]="abertoEditar"
+    >
+    </app-editar-megafone>-->
 
 </div>

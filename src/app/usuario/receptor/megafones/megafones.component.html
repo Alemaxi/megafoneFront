@@ -1,6 +1,22 @@
 <div style="width: 100%;height: 100%; overflow: auto;">
-    <app-megafones-layout (abrir)="Abrir($event)" ></app-megafones-layout>
+    <app-megafones-layout 
+    (abrir)="Abrir($event)" 
+    (abrirCriar)="AbrirCadastrar()" 
+    [mostrarAdd]="true"
+    [megafones]="megafones"
+    (carregarMegafones)="AtualizarTela()">
+    </app-megafones-layout>
 </div>
 
-<app-mensagens-layout [(aberto)]="aberto"></app-mensagens-layout>
+<app-mensagens-layout 
+[(aberto)]="aberto"
+[mostrarEditar]="false"
+[mostrarExcluir]="false"
+[mostrarPostar]="false">
+</app-mensagens-layout>
+
+<app-cadastrar-em-megafone 
+[(aberto)]="abertoCriar"
+(atualizarMicrofones)="BuscarMegafones()">
+</app-cadastrar-em-megafone>
 

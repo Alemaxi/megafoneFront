@@ -6,6 +6,7 @@ import { MensageiroRouterModule } from './mensageiro-router.module';
 import { MegafonesLayoutModule } from 'src/app/shared/layout/megafones-layout/megafones-layout.module';
 import { MensagensLayoutModule } from '../../shared/layout/mensagens-layout/mensagens-layout.module'
 import { CriarMegafoneModule } from '../../shared/layout/criar-megafone/criar-megafone.module';
+import { EditarMegafoneComponent } from 'src/app/shared/layout/editar-megafone/editar-megafone.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CriarMegafoneModule } from '../../shared/layout/criar-megafone/criar-me
     MensageiroRouterModule,
     MegafonesLayoutModule,
     MensagensLayoutModule,
-    CriarMegafoneModule
+    CriarMegafoneModule,
+    EditarMegafoneComponent,
   ]
 })
 export class MensageiroModule { }

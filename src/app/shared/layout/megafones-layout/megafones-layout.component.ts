@@ -16,7 +16,7 @@ export class MegafonesLayoutComponent implements OnInit {
   @Input() mostrarAtualizar: boolean = true;
   @Input() megafones: MegafoneDTO[] = [];
 
-  @Output() abrir = new EventEmitter<boolean>();
+  @Output() abrir = new EventEmitter<MegafoneDTO>();
   @Output() abrirCriar = new EventEmitter()
   @Output() carregarMegafones = new EventEmitter();
 
@@ -42,8 +42,8 @@ export class MegafonesLayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Abrir() {
-    this.abrir.emit(true);
+  Abrir(megafone:MegafoneDTO) {
+    this.abrir.emit(megafone);
   }
 
   AbrirCriar() {
@@ -56,5 +56,9 @@ export class MegafonesLayoutComponent implements OnInit {
 
   ObterMegafonesParaDisplay(): MegafoneDTO[] {
     return this.megafones.filter(x => x.nome?.includes(this.filterControl.value as string))
+  }
+
+  ObterQuantidade(megafone:MegafoneDTO):Number{
+    return Number(megafone.quantidadeMensagens)>9?9:Number(megafone.quantidadeMensagens);
   }
 }

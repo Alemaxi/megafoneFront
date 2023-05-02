@@ -1,0 +1,33 @@
+<div class="area-fora" [class.area-fora-mostrar]="aberto" (click)="Fechar()">
+
+</div>
+<form 
+class="envelope-criar-megafone"
+[formGroup]="criarGroup"
+[class.envelope-criar-megafone-mostrar]="aberto"
+(ngSubmit)="CadastrarEmMegafone()"
+>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 class="titulo">Cadastrar em Megafone</h1>
+        <span class="material-symbols-outlined mensagens-fechar" 
+        style="font-size: 30px; cursor: pointer;" (click)="Fechar()">
+        close
+        </span>
+    </div>
+
+    <label for="nome" class="label">Código do Megafone</label>
+    <input 
+    formControlName="codigoMegafone" 
+    id="nome" 
+    type="number" 
+    class="input-text"
+    [class.input-text-invalid]="CodigoMegafone.invalid && CodigoMegafone.touched">
+    
+    <button 
+    type="submit" 
+    class="principalButton"
+    style="margin-top: 45px;"
+    (click)="CadastrarEmMegafone()">
+        Cadastrar
+    </button>
+</form>
