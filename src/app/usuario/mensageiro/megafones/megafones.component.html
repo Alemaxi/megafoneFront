@@ -11,14 +11,10 @@
     
     <app-mensagens-layout 
     [(aberto)]="aberto"
+    [megafoneSelecionado]="megafoneSelecionado"
     (abrirExcluir)="AbrirExcluir()"
     (abrirEditar)="AbrirEditar()">
     </app-mensagens-layout>
-
-    <app-criar-megafone 
-    [(aberto)]="abertoCriar"
-    (atualizarMegafones)="CarregarMegafones()">
-    </app-criar-megafone>
 
     <!--<app-editar-megafone
     [megafoneSelecionado]="megafoneSelecionado"

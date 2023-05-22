@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactory, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
 import { MegafoneDTO } from 'src/app/domain/dto/megafone-dto';
 import { AcessoService } from 'src/app/service/acesso/acesso.service';
 import { MegafoneService } from 'src/app/service/megafone/megafone.service';
+import { CadastrarMensagemLayoutComponent } from 'src/app/shared/layout/cadastrar-mensagem-layout/cadastrar-mensagem-layout.component';
+import { CriarMegafoneComponent } from 'src/app/shared/layout/criar-megafone/criar-megafone.component';
+import { MenuEsquerdoService } from 'src/app/shared/layout/menu-esquerdo-operacoes/menu-esquerdo.service';
 
 @Component({
   selector: 'app-megafones',
@@ -10,7 +13,9 @@ import { MegafoneService } from 'src/app/service/megafone/megafone.service';
 })
 export class MegafonesComponent implements OnInit {
 
-  aberto: boolean = false;
+  @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+
+  aberto: boolean = true;
   abertoCriar: boolean = false;
   abertoEditar: boolean = false;
   megafoneSelecionado: MegafoneDTO = new MegafoneDTO();
@@ -19,7 +24,9 @@ export class MegafonesComponent implements OnInit {
 
   constructor(
     protected acesso: AcessoService,
-    protected megafone: MegafoneService
+    protected megafone: MegafoneService,
+    protected esquerdo: MenuEsquerdoService,
+    protected viewContainer: ViewContainerRef
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +39,10 @@ export class MegafonesComponent implements OnInit {
   }
 
   AbrirCriar(){
+    let componentRef = this.viewContainer.createComponent(CriarMegafoneComponent);
+    this.esquerdo.titulo = "Criar Megafone";
+    this.esquerdo.Abrir(componentRef.hostView);
+    this.viewContainer.clear();
     this.abertoCriar = true;
   }
 

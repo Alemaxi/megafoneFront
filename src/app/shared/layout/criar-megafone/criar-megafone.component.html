@@ -1,19 +1,10 @@
-<div class="area-fora" [class.area-fora-mostrar]="aberto" (click)="Fechar()">
 
-</div>
 <form 
-class="envelope-criar-megafone"
+class="envelope"
 [formGroup]="criarGroup"
-[class.envelope-criar-megafone-mostrar]="aberto"
 (ngSubmit)="CriarMegafone()"
 >
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 class="titulo">Criar Megafone</h1>
-        <span class="material-symbols-outlined mensagens-fechar" 
-        style="font-size: 30px; cursor: pointer;" (click)="Fechar()">
-        close
-        </span>
-    </div>
+    
 
     <label for="nome" class="label">Nome do Megafone</label>
     <input 

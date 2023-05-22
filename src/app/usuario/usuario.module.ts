@@ -5,6 +5,7 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
 //Angular material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MenuEsquerdoOperacoesComponent } from '../shared/layout/menu-esquerdo-operacoes/menu-esquerdo-operacoes.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   imports: [
     UsuarioRoutingModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MenuEsquerdoOperacoesComponent,
   ]
 })
 export class UsuarioModule { }

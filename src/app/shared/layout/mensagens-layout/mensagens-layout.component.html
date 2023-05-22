@@ -7,7 +7,7 @@
         <div style="display: flex;">
 
             <span class="material-symbols-outlined adicionar-mensagem-botao"
-            *ngIf="mostrarPostar">
+            *ngIf="mostrarPostar" (click)="CriarMensagem()">
                 post_add
             </span>
             <!--<span 
@@ -28,5 +28,5 @@
         </div>
     </div>
 
-
+    <div style="display: none;" #container></div>
 </div>

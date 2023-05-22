@@ -49,12 +49,6 @@ export class EditarMegafoneComponent implements OnInit {
     this.aberto = true;
   }
 
-  Fechar(){
-    this.editarGroup.reset();
-    this.aberto = false;
-    this.abertoChange.emit(this.aberto);
-  }
-
   AtualizarMegafone(){
     if (this.editarGroup.invalid){
       return;
@@ -66,8 +60,6 @@ export class EditarMegafoneComponent implements OnInit {
       nome: this.NomeMegafone.value,
       idMensageiro: this.acesso.usuarioLogado?.id
     }
-    
-    this.Fechar();
     
     this.megafone.CriarMegafone(megafone).subscribe({
       next: x => {

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CriarMegafoneDto } from 'src/app/domain/dto/criar-megafone-dto';
 import { AcessoService } from 'src/app/service/acesso/acesso.service';
 import { MegafoneService } from 'src/app/service/megafone/megafone.service';
+import { MenuEsquerdoService } from '../menu-esquerdo-operacoes/menu-esquerdo.service';
 
 @Component({
   selector: 'app-criar-megafone',
@@ -14,6 +15,7 @@ export class CriarMegafoneComponent implements OnInit {
   constructor(
     protected megafone: MegafoneService,
     protected acesso: AcessoService,
+    protected esquerdo: MenuEsquerdoService
   ) { }
 
   @Input() aberto: boolean = false;
@@ -32,12 +34,6 @@ export class CriarMegafoneComponent implements OnInit {
     this.aberto = true;
   }
 
-  Fechar(){
-    this.criarGroup.reset();
-    this.aberto = false;
-    this.abertoChange.emit(this.aberto);
-  }
-
   CriarMegafone(){
     if (this.criarGroup.invalid){
       return;
@@ -50,11 +46,13 @@ export class CriarMegafoneComponent implements OnInit {
       idMensageiro: this.acesso.usuarioLogado?.id
     }
     
-    this.Fechar();
-    
+      alert("oi");
+
     this.megafone.CriarMegafone(megafone).subscribe({
       next: x => {
         this.atualizarMegafones.emit();
+        this.criarGroup.reset();
+        this.esquerdo.fechar.emit();
       }
     });
   }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MegafoneDTO } from 'src/app/domain/dto/megafone-dto';
+import { MenuEsquerdoService } from '../menu-esquerdo-operacoes/menu-esquerdo.service';
 
 @Component({
   selector: 'app-megafones-layout',
@@ -8,8 +9,6 @@ import { MegafoneDTO } from 'src/app/domain/dto/megafone-dto';
   styleUrls: ['./megafones-layout.component.scss']
 })
 export class MegafonesLayoutComponent implements OnInit {
-
-  itens = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
 
   @Input() mostrarQuantidade: boolean = true;
   @Input() mostrarAdd: boolean = false;
@@ -22,7 +21,9 @@ export class MegafonesLayoutComponent implements OnInit {
 
   filterControl = new FormControl('')
 
-  constructor() {
+  constructor(
+    protected esquerdo: MenuEsquerdoService
+  ) {
     var auxMegafone: MegafoneDTO = {
       descricao: "Descricao",
       id: 1,
@@ -37,6 +38,10 @@ export class MegafonesLayoutComponent implements OnInit {
     this.megafones.push(...[auxMegafone, auxMegafone, auxMegafone, auxMegafone, auxMegafone]);
     this.megafones.push(...[auxMegafone, auxMegafone, auxMegafone, auxMegafone, auxMegafone]);
     this.megafones.push(...[auxMegafone, auxMegafone, auxMegafone, auxMegafone, auxMegafone]);
+
+    this.esquerdo.fechar.subscribe(x => {
+      this.AtualizarMegafones();
+    })
   }
 
   ngOnInit(): void {

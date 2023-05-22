@@ -1,0 +1,33 @@
+<div 
+class="envelope"
+[formGroup]="mensagemGroup"
+(ngSubmit)="Enviar()"
+>
+    <label for="assunto" class="label">Assunto</label>
+    <input 
+    formControlName="assunto" 
+    id="assunto" 
+    type="text" 
+    class="input-text">
+
+    <label for="duracao" class="label">Duração</label>
+    <select class="input-text" formControlName="duracao">
+        <option value="" selected>Selecione</option>
+        <option value="0">Um dia</option>
+        <option value="1">Uma semana</option>
+        <option value="2">Um mês</option>
+    </select>
+    
+    <label for="text" class="label">Mensagem</label>
+    <textarea 
+    formControlName="mensagem" 
+    name="" 
+    id="" 
+    cols="60" 
+    rows="5" 
+    class="input-text" 
+    style="margin-bottom: 50px;">
+    </textarea>
+    
+    <button type="submit" (click)="Enviar()" class="principalButton">Enviar</button>
+</div>

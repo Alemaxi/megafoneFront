@@ -2,49 +2,15 @@
 @import '../../css/input-text.scss';
 @import '../../css/buttons.scss';
 
-.envelope-criar-megafone {
-    position: absolute;
-    top: 0px;
-    left: 100%;
-    background-color: $criarMegafone;
-    color: $principalTexto;
-    box-sizing: border-box;
-    padding-left: 30px;
-    padding-right: 20px;
-    width: 40%;
+.envelope {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    transition: .5s ease-in-out;
-}
-
-.envelope-criar-megafone-mostrar {
-    left: 60%;
-}
-
-.titulo {
-    margin-top: 0px;
-    padding-top: 10px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
 }
 
 .label {
     margin-top: 35px;
     font-size: 14px;
     margin-bottom: 10px;
-}
-
-.area-fora {
-    display: none;
-    position: absolute;
-    top:0px;
-    background-color: rgba(0, 0, 0, .3);
-    width: 100%;
-    height: 100%;
-    transition: .5s ease-in-out;
-}
-
-.area-fora-mostrar {
-    display: block;
 }

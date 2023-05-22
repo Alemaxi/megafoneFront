@@ -1,0 +1,18 @@
+<div class="area-fora" [class.area-fora-mostrar]="aberto" (click)="Fechar()">
+
+</div>
+<div 
+class="envelope-criar-megafone"
+[class.envelope-criar-megafone-mostrar]="aberto"
+>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 class="titulo">{{esquerdo.titulo}}</h1>
+        <span class="material-symbols-outlined mensagens-fechar" 
+        style="font-size: 30px; cursor: pointer;" (click)="Fechar()">
+        close
+        </span>
+    </div>
+
+    <ng-template appEsquerdo></ng-template>
+    
+</div>
